@@ -43,7 +43,4 @@ python demo_classify_pose.py
 
 If want to demo camera just modify "video_path" set to 0 (or your cameras position number).   
 
-And use display_classify_pose() to show result. :D  
-
-
-
+And use display_classify_pose() to show result.  
