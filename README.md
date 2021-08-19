@@ -19,4 +19,16 @@ I create 3 categories of body pose with a  example. You can add new body pose ca
 
 **demo_classify_pose.py** - Display pose classify and save result with a input video.
 
+## Install
+
+**Conda Virtualenv**
+
+```bash
+
+conda create --name [env_name]  python=3.7
+conda activate [env_name]
+pip install -r requirements.txt
+
+```
+
 
