@@ -15,9 +15,9 @@ I create 3 categories of body pose with a  example. You can add new body pose ca
 
 **model_train.py** - Use pose dataset to train classifier model and save model weights.
 
-**model_test.py** - Input a image to test model pridect pose.
+**model_test.py** - Input an image to test the model predict of pose category.   
 
-**demo_classify_pose.py** - Display input video with classify result video.
+**demo_classify_pose.py** - Display pose classify and save result with a input video.
 
 
 
