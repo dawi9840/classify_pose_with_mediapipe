@@ -9,7 +9,7 @@ The idea is from [AI Pose Estimation with Python and MediaPipe | Plus AI Gym Tra
 
 I create 3 pose class to classify with a example. You can addd new pose class yourself in **pose_dataset_create.py**.
 
-# The file description. 
+# The file description
 
 **pose_dataset_create.py** - Check the data is exit or not and create dataset with new pose class.   
 
