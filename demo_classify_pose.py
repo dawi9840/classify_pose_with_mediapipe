@@ -125,7 +125,7 @@ def save_display_classify_pose(cap, model, out_video):
     h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     print(f'video_w: {w}, video_h: {h}')
 
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v') # 輸出附檔名為 mp4 
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v') # 輸出附檔名為 mp4. 
     out = cv2.VideoWriter(out_video, fourcc, output_fps, (w, h))
     
     mp_drawing = mp.solutions.drawing_utils # Drawing helpers.
@@ -212,6 +212,7 @@ def save_display_classify_pose(cap, model, out_video):
 
                 except:
                     pass
+
                 out.write(image)
                 cv2.imshow('Raw Webcam Feed', image)
 
@@ -228,11 +229,11 @@ def save_display_classify_pose(cap, model, out_video):
 
 if __name__ == '__main__':
 
-    # Test video file name: cat_camel2, bridge2, bridge3, heel_raise2.
+    # Test video file name: cat_camel2, bridge2, heel_raise2.
     video_file_name = "cat_camel2"
-    model_weights = 'body_language3.pkl'
-
-    video_path = "./resource/" + video_file_name +".mp4"
+    model_weights = './model_weights/weights_body_language.pkl'
+    
+    video_path = "./resource/video/" + video_file_name +".mp4"
     output_video = video_file_name + "_out.mp4"
 
     cap = cv2.VideoCapture(video_path)
