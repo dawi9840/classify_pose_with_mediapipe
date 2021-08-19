@@ -1,4 +1,3 @@
-from sklearn.metrics import accuracy_score # Accuracy metrics
 import pickle
 import pandas as pd
 import numpy as np
@@ -39,18 +38,20 @@ def img_model_test(image, model):
         X = pd.DataFrame([row])
         body_language_class = model.predict(X)[0]
         body_language_prob = model.predict_proba(X)[0]
-        print(f'class: {body_language_class}, prob: {body_language_prob}')
+        # print(f'class: {body_language_class}, prob: {body_language_prob}')
 
         return body_language_class, body_language_prob
 
 if __name__ == '__main__':
 
     img = cv2.imread('./resource/imgs/test1.png')
-    model_weights = 'body_language3.pkl'
+    model_weights = './model_weights/weights_body_language.pkl'
     
     # Load Model.
     with open(model_weights, 'rb') as f:
         model = pickle.load(f)
 
     # Input image to test model predict. 
-    img_model_test(image=img, model=model)
+    predict_class = img_model_test(image=img, model=model)[0]
+    class_probbile = img_model_test(image=img, model=model)[1]
+    print(f'\nclass: {predict_class}, acc: {class_probbile}\n')
