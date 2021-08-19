@@ -20,4 +20,3 @@ I create 3 categories of body pose with a  example. You can add new body pose ca
 **demo_classify_pose.py** - Display pose classify and save result with a input video.
 
 
-
