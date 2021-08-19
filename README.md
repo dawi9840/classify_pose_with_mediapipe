@@ -31,4 +31,17 @@ pip install -r requirements.txt
 
 ```
 
+## Usage
+
+**demo_classify_pose.py**
+
+```bash
+
+python demo_classify_pose.py
+
+```
+
+If want to use camera demo just modify video_path set to 0 (or your cameras position number).   
+
+
 
