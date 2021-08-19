@@ -5,7 +5,7 @@ Use mediapipe holistic model to classify pose application.
 
 This repository use [mediapipe](https://github.com/google/mediapipe) to get the body pose of 33 key points (coordinate points) which create a dataset to be classified the body pose.  
 
-The idea is from [AI Pose Estimation with Python and MediaPipe | Plus AI Gym Tracker Project](https://youtu.be/06TE_U21FK4).   
+The idea is from [AI Body Language Decoder with MediaPipe](https://youtu.be/We1uB79Ci-w).   
 
 I create 3 categories of body pose with a  example. You can add new body pose category for yourself by **pose_dataset_create.py**.   
 
