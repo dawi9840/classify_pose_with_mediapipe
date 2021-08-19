@@ -13,7 +13,7 @@ I create 3 categories of body pose with a  example. You can add new body pose ca
 
 **pose_dataset_create.py** - Check the csv dataset is exist or not and create dataset to add new pose category.   
 
-**model_train.py** - Use pose dataset to train Classifier model.
+**model_train.py** - Use pose dataset to train Classifier model and save model weights.
 
 **model_test.py** - Input a image to test model pridect pose.
 
