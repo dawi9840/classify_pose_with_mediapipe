@@ -21,7 +21,7 @@ I create 3 categories of body pose with a  example. You can add new body pose ca
 
 ## Install
 
-**Conda Virtualenv**
+**Conda virtual env**
 
 ```bash
 
