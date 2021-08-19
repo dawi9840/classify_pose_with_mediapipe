@@ -2,8 +2,8 @@ import cv2
 import os
 import csv
 import numpy as np
-import pandas as pd
-import mediapipe as mp 
+import mediapipe as mp
+import pandas as pd 
 
 def mediapipe_detections(cap):
     '''# 1. Make Some Detections with a video # '''
@@ -88,7 +88,7 @@ def mediapipe_detections(cap):
     cv2.destroyAllWindows()
 
 def create_pose_csv(cap, create_csv):
-    '''# Create pose detections csv  with a video # '''
+    ''' Create pose detections csv  with a video.'''
 
     # Color difine
     color_face1 = (80,110,10)
@@ -101,7 +101,8 @@ def create_pose_csv(cap, create_csv):
     color_pose2 = (245,66,230)
 
     if (cap.isOpened() == False):
-        print("Error opening the video file.")
+        print("\nError opening the video file.")
+        return
     else:
         pass
         # input_fps = cap.get(cv2.CAP_PROP_FPS)
@@ -183,10 +184,9 @@ def create_pose_csv(cap, create_csv):
             else:
                 break
 
-    print(f'Create {dataset_csv_file} done! \nNow you can run again.')
+    print(f'\nCreate {dataset_csv_file} done! \n\nNow you can run again.')
     cap.release()
     cv2.destroyAllWindows()
-    return results
 
 def add_record_coordinates(cap, class_name, export_csv):
     if (cap.isOpened() == False):
@@ -277,19 +277,26 @@ def add_record_coordinates(cap, class_name, export_csv):
             else:
                 break
             
-    print('Add done!')
+    print('Add done!\n -------------------')
     cap.release()
     cv2.destroyAllWindows()
+    check_csv_contents(file=export_csv)
+
+def check_csv_contents(file):
+    df = pd.read_csv(file)
+    print(f'Top5 datas: \n{df.head()}')
+    print(f'Last5 datas: \n{df.tail()}')
 
 if __name__ == '__main__':
     
-    add_class = 'cat_camel'
-    # Test video file name: cat_camel2, bridge2, bridge3, heel_raise2.
-    video_file_name = 'cat_camel1'
-    dataset_csv_file = 'coords_aa.csv'
+    # Add 3 categories of pose: cat_camel, bridge, heel_raise.
+    add_class = 'heel_raise'
+    video_file_name = 'heel_raise1'
+    dataset_csv_file = './dataset/coords_dataset.csv'
 
-    video_path = "./resource/" + video_file_name +".mp4"
+    video_path = "./resource/video/" + video_file_name +".mp4"
     output_video = video_file_name + "_out.mp4"
+
     cap = cv2.VideoCapture(video_path)
 
     if os.path.isfile(dataset_csv_file):
@@ -298,7 +305,7 @@ if __name__ == '__main__':
 
         add_record_coordinates(cap=cap, class_name=add_class, export_csv=dataset_csv_file)
     else:
-        print (f'{dataset_csv_file}: No exist.')
-        print('Initiate creating a csv file....')
+        print (f'{dataset_csv_file}: Not exist.')
+        print('\nInitiate creating a csv file....\n')
 
         create_pose_csv(cap, create_csv=dataset_csv_file)
