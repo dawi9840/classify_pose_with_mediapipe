@@ -11,7 +11,7 @@ I create 3 pose class to classify with a example. You can addd new pose class yo
 
 # The file description
 
-**pose_dataset_create.py** - Check the data is exit or not and create dataset with new pose class.   
+**pose_dataset_create.py** - Check the data is exist or not and create dataset with new pose class.   
 
 **model_train.py** - Use pose dataset to train Classifier model.
 
