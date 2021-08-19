@@ -32,8 +32,8 @@ def evaluate_model(fit_models, x_test, y_test):
 
 if __name__ == '__main__':
     
-    dataset_csv_file = 'coords2.csv'
-    model_weights = 'body_language3.pkl'
+    dataset_csv_file = './dataset/coords_dataset.csv'
+    model_weights = './model_weights/weights_body_language.pkl'
 
     x_train = load_dataset(csv_data=dataset_csv_file)[0]
     y_train = load_dataset(csv_data=dataset_csv_file)[2]
